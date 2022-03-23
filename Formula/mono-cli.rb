@@ -5,21 +5,21 @@
 class MonoCli < Formula
   desc "Opinionated command line tool for managing all your project tasks."
   homepage "https://technikhil314.netlify.app/docs/mono-cli/introduction"
-  version "0.0.0-alpha.15"
+  version "0.0.0-alpha.22"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "7b92041e093b4339c55b78c768c18be733f83f70722c7bae68aff3015acccb8c"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.22/mono-cli_0.0.0-alpha.22_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e383af643410e5a18d87e566e278ff1e6d6eb0f10723cbe0b8036cd405c70474"
 
       def install
         bin.install "mono"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "b66f7a7940366fdfa776f9bf304c926601428b29261fb7c1ea05c5efe68b868e"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.22/mono-cli_0.0.0-alpha.22_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "a0f1f38cbddb8075287b8a9b7061b6651de8e7f8c790a343c9a0356effac676b"
 
       def install
         bin.install "mono"
@@ -28,21 +28,25 @@ class MonoCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "f32c25b84f4a3f8d50487c2d730f144fd26fb1caed0b742ab1d439d286754eb5"
-
-      def install
-        bin.install "mono"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "894410a2790f5ec1f8bbe25dbabeed8fccac6a6523b19ed5fbb3d9a82f4bef98"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.22/mono-cli_0.0.0-alpha.22_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "bfeb085ca76d4b3e780e48149c631f4b68ed3c4ea7f900f2bc05dafd432699ac"
 
       def install
         bin.install "mono"
       end
     end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.22/mono-cli_0.0.0-alpha.22_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "5659c69d2cdd93d4f4f4e1d43e487f8f6149f9671c512f19704f44da0bab597f"
+
+      def install
+        bin.install "mono"
+      end
+    end
+  end
+
+  test do
+    system "#{bin}/mono --version"
   end
 end
