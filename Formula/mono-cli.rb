@@ -5,21 +5,21 @@
 class MonoCli < Formula
   desc "Opinionated command line tool for managing all your project tasks."
   homepage "https://technikhil314.netlify.app/docs/mono-cli/introduction"
-  version "0.0.0-alpha.23"
+  version "0.0.0-alpha.24"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.23/mono-cli_0.0.0-alpha.23_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "dbd05ba029418ded4bbbc6d442808f3b860c7043ff9de2750ea12d9da0682bdc"
+    if Hardware::CPU.arm?
+      url "https://www.github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.24/mono-cli_0.0.0-alpha.24_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "b54e2da08f50baa6f138948d9afce7802815290c140dda3f9da607a4048c9e58"
 
       def install
         bin.install "mono"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.23/mono-cli_0.0.0-alpha.23_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "16618cf972bc9192d0ed596fd5df93c26c2a49c3946eedc21771bdbb3063b893"
+    if Hardware::CPU.intel?
+      url "https://www.github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.24/mono-cli_0.0.0-alpha.24_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "82069d610b029bbfdb6dc29db1058071bb0cc05c72201ebf78cf6d2a53ccb365"
 
       def install
         bin.install "mono"
@@ -29,16 +29,16 @@ class MonoCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.23/mono-cli_0.0.0-alpha.23_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "b59a2227ea5fac8ed6c8729182e9f161e1de9dd6eeb9f4b97cf43357482fca73"
+      url "https://www.github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.24/mono-cli_0.0.0-alpha.24_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c4aedf75ff6d1df9aa43f9de1e1738692e526f26b80517db04e27aa6dfa4301b"
 
       def install
         bin.install "mono"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.23/mono-cli_0.0.0-alpha.23_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "8dd8542c500c1fd924db738939530684264d94c9a83c802dbf0a8e2258acb1c6"
+      url "https://www.github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.24/mono-cli_0.0.0-alpha.24_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "da7038b22937d44a0561189dbaf0f54e5722dee96dd2fba65ad1f165cc77d495"
 
       def install
         bin.install "mono"
