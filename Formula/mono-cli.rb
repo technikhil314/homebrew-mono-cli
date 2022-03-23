@@ -5,22 +5,40 @@
 class MonoCli < Formula
   desc "Opinionated command line tool for managing all your project tasks."
   homepage "https://technikhil314.netlify.app/docs/mono-cli/introduction"
-  version "0.0.0-alpha.11"
+  version "0.0.0-alpha.15"
   license "MIT"
-  depends_on :linux
 
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.11/mono-cli_0.0.0-alpha.11_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "918d8b0778a621295b3770c038070b1fc5d76c4c84fb95568c6dc42772d1ab35"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "7b92041e093b4339c55b78c768c18be733f83f70722c7bae68aff3015acccb8c"
 
       def install
         bin.install "mono"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.11/mono-cli_0.0.0-alpha.11_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "9c2b81b858c5e8b11a342189efbbe15ef68378e4cb89df8137e3c3b54dd6442e"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "b66f7a7940366fdfa776f9bf304c926601428b29261fb7c1ea05c5efe68b868e"
+
+      def install
+        bin.install "mono"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "f32c25b84f4a3f8d50487c2d730f144fd26fb1caed0b742ab1d439d286754eb5"
+
+      def install
+        bin.install "mono"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.15/mono-cli_0.0.0-alpha.15_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "894410a2790f5ec1f8bbe25dbabeed8fccac6a6523b19ed5fbb3d9a82f4bef98"
 
       def install
         bin.install "mono"
