@@ -5,21 +5,21 @@
 class MonoCli < Formula
   desc "Opinionated command line tool for managing all your project tasks."
   homepage "https://technikhil314.netlify.app/docs/mono-cli/introduction"
-  version "0.0.0-alpha.26"
+  version "0.0.0-alpha.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.26/mono-cli_0.0.0-alpha.26_Darwin_x86_64.tar.gz"
-      sha256 "1aa22d0d9738d59d72a6e7401dfc0bb9a0edde9ffeea4f2ec1e7f7ca9fc3f727"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.2/mono-cli_0.0.0-alpha.2_Darwin_x86_64.tar.gz"
+      sha256 "da117a1f4eada888c9fd33b440ba25965d1a2667bd1b52260c7512b546c7961a"
 
       def install
         bin.install "mono"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.26/mono-cli_0.0.0-alpha.26_Darwin_arm64.tar.gz"
-      sha256 "1e70f33fc1dd49e2be513ebf556ad0129684ae44192a1b23e0d9bb9cb4eccecc"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.2/mono-cli_0.0.0-alpha.2_Darwin_arm64.tar.gz"
+      sha256 "8fcbffa7b450577b483939d2bc73dc6383f7ca8202b1012d3699766aee143a85"
 
       def install
         bin.install "mono"
@@ -29,16 +29,16 @@ class MonoCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.26/mono-cli_0.0.0-alpha.26_Linux_arm64.tar.gz"
-      sha256 "dbbe8d9a80177b023dbf4583f8d6d930942a564768214c6d4052ae04132fafcf"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.2/mono-cli_0.0.0-alpha.2_Linux_arm64.tar.gz"
+      sha256 "499ac7b9eea2b32da530d09e179161ec7caffb8948a835998a375cdaac29cbc0"
 
       def install
         bin.install "mono"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.26/mono-cli_0.0.0-alpha.26_Linux_x86_64.tar.gz"
-      sha256 "e96003ee69faf287dd3448446718e02929f5779a453b3471b159a14a71890438"
+      url "https://github.com/technikhil314/mono-cli/releases/download/v0.0.0-alpha.2/mono-cli_0.0.0-alpha.2_Linux_x86_64.tar.gz"
+      sha256 "4e34dd93eeea5f023215c0a769329a06aa3d2a5ff0212d36b32b9e702b3dacfd"
 
       def install
         bin.install "mono"
